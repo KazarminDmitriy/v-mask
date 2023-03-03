@@ -38,8 +38,7 @@ function updateValue(el, force = false) {
   const { previousValue, mask } = options.get(el);
 
   const isValueChanged = value !== previousValue;
-  const isLengthIncreased = value.length > previousValue.length;
-  const isUpdateNeeded = value && isValueChanged && isLengthIncreased;
+  const isUpdateNeeded = value && isValueChanged;
 
   if ((force || isUpdateNeeded) && mask) {
     const { conformedValue } = conformToMask(value, mask, { guide: false });
